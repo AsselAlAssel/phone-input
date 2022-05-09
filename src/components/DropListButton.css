@@ -1,0 +1,18 @@
+.form__dropListButton {
+    box-sizing: border-box;
+    display: flex;
+    width: auto;
+    justify-content: space-between;
+    align-items: center;
+    width: 100px;
+    padding: 10px;
+    border: none;
+    bottom: #f1f4f8;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.form__dropListButton img {
+    height: 30px;
+    width: 30px;
+}

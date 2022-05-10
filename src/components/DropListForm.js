@@ -22,7 +22,7 @@ const DropListForm = () => {
     if (loading) {
         return <h2 className="container__status">LOADING...</h2>
     } else if (hasError) {
-        return <h2 className="container__status">There an error...</h2>
+        return <h2 className="container__status error">There an error...</h2>
     }
 
     return (

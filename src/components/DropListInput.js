@@ -6,18 +6,18 @@ const DropListInput = props => {
 
 
     const changePhoneInputHandler = (event) => {
-        const EnteredValue = event.target.value;
-        const IsInputValueHasLengthMorThan3AndLastCharIsHyphen = EnteredValue.length >= 3 && EnteredValue.at(-1) === "-";
+        const enteredValue = event.target.value;
+        const IsInputValueHasLengthMorThan3AndLastCharIsHyphen = enteredValue.length >= 3 && enteredValue.at(-1) === "-";
         if (IsInputValueHasLengthMorThan3AndLastCharIsHyphen) {
-            setInputValue(EnteredValue.slice(0, -2));
+            setInputValue(enteredValue.slice(0, -2));
             return;
         }
 
 
 
-        const isEnteredValueIsNumberAndItsLengthLesThan10 = !isNaN(EnteredValue.replaceAll("-", "")) && EnteredValue.replaceAll("-", "").length <= 9;
+        const isEnteredValueIsNumberAndItsLengthLesThan10 = !isNaN(enteredValue.replaceAll("-", "")) && enteredValue.replaceAll("-", "").length <= 9;
         if (isEnteredValueIsNumberAndItsLengthLesThan10) {
-            setInputValue(EnteredValue);
+            setInputValue(enteredValue);
         }
     }
 

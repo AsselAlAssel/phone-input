@@ -1,3 +1,17 @@
+.container__status {
+    text-align: center;
+    width: 400px;
+    margin: auto;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: blueviolet;
+    color: #fff;
+}
+
+.container__status.error {
+    background-color: red;
+}
+
 .container__dropListForm {
     width: 400px;
     margin: auto;

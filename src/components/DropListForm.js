@@ -8,14 +8,14 @@ const url = "https://gist.githubusercontent.com/kcak11/4a2f22fb8422342b3b3daa7a1
 
 const DropListForm = () => {
     const { data: countriesCode, loading, hasError } = useFetchData(url);
-    const [dropListValue, setDropListValue] = useState("");
+    const [dropListValue, setDropListValue] = useState();
     const [showDropList, setShowDropList] = useState(false);
 
 
     const changeVisibilityOfDopList = () => {
         setShowDropList(prevValue => !prevValue);
     }
-    const ChangeDropListValue = (newDropListValue) => {
+    const onDropListValueChange = (newDropListValue) => {
         setDropListValue(newDropListValue);
     }
 
@@ -31,18 +31,18 @@ const DropListForm = () => {
 
             <div className="dropListForm__buttonAndInput">
                 <DropListButton
-                    data={countriesCode[0]}
+                    flag={dropListValue ? dropListValue.flag : countriesCode[0].flag}
                     onChangeVisibilityOfDopList={changeVisibilityOfDopList}
                     showDropList={showDropList}
                 />
                 <DropListInput
-                    code={dropListValue.dialCode}
+                    code={dropListValue ? dropListValue.dialCode : countriesCode[0].dialCode}
                 />
             </div>
 
             {showDropList && < DropList
                 countriesData={countriesCode}
-                onChangeDropListValue={ChangeDropListValue}
+                onChangeDropListValue={onDropListValueChange}
                 onClickOnAnyDropListItem={changeVisibilityOfDopList}
             />
             }

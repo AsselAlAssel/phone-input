@@ -1,0 +1,14 @@
+.formContainer {
+    width: 500px;
+    margin: 40px auto;
+}
+
+.formContainer__ButtonAndInput {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 18px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid red;
+}

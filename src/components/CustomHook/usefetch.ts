@@ -1,5 +1,5 @@
 import  { useEffect, useState } from 'react'
-import { dropListValueType } from './DropListForm';
+import { dropListValueType } from '../DropListContainer/constant';
 
 const useFetchData = (url:string) => {
         const [data,setData]=useState<dropListValueType[]>([]);

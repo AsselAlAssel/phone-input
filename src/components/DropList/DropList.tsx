@@ -1,15 +1,8 @@
 import React from 'react'
 import "./DropList.css"
-import { dropListValueType } from './DropListForm'
-type Props={
-    countriesData:dropListValueType[],
-    setDropListValue: React.Dispatch<React.SetStateAction<dropListValueType | undefined>>,
-    setShowDropList: React.Dispatch<React.SetStateAction<boolean>>,
+import { Props } from './constant'
 
-
-}
-
-const DropList:React.FC<Props> = ({countriesData,setDropListValue,setShowDropList}) => {
+const DropList:React.VFC<Props> = ({countriesData,setDropListValue,setShowDropList}) => {
   
     const handelDropListItemClick = (event:any) => {
         const index = event.target.getAttribute("data-index");

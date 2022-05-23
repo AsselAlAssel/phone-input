@@ -1,9 +1,9 @@
-.formContainer {
+.dropListContainer {
     width: 500px;
     margin: 40px auto;
 }
 
-.formContainer__ButtonAndInput {
+.dropListContainer__ButtonAndInput {
     display: flex;
     justify-content: flex-start;
     align-items: center;

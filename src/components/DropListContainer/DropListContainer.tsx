@@ -1,17 +1,12 @@
 import React, { useState } from 'react';
-import DropList from './DropList';
-import DropListButton from './DropListButton';
-import "./DropListFrom.css";
-import DropListInput from './DropListInput';
-import useFetchData from './use-fetch';
+import DropList from '../DropList/DropList';
+import DropListButton from '../DropListButton/DropListButton';
+import "./DropListContainer.css";
+import DropListInput from '../DropListInput/DropListInput';
+import useFetchData from '../CustomHook/usefetch';
+import { dropListValueType } from './constant';
 
 
-export type dropListValueType={
-    name: string
-    dialCode:string,
-    isoCode: string,
-    flag: string
-}
 const url="https://gist.githubusercontent.com/kcak11/4a2f22fb8422342b3b3daa7a1965f4e4/raw/3d54c1a6869e2bf35f729881ef85af3f22c74fad/countries.json";
 
 const DropListFrom:React.FC = () => {
@@ -26,8 +21,8 @@ const DropListFrom:React.FC = () => {
     }
 
   return(
-      <form className='formContainer' onSubmit={event=>event.preventDefault()}>
-          <div className='formContainer__ButtonAndInput'>
+      <div className='dropListContainer' onSubmit={event=>event.preventDefault()}>
+          <div className='dropListContainer__ButtonAndInput'>
         <DropListButton
           flag={dropListValue ? dropListValue.flag : countriesCode[0].flag}
           name={dropListValue ? dropListValue.name : countriesCode[0].name}
@@ -45,7 +40,7 @@ const DropListFrom:React.FC = () => {
                 setShowDropList={setShowDropList}
             />
             }
-      </form>
+      </div>
   )
 }
 

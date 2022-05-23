@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import  "./DropListInput.css"
+import {Props} from "./constant"
 
-type Props={
-  code:string
-}
 const DropListInput:React.FC<Props> = ({code}) => {
   const [inputValue, setInputValue] = useState<string>("");
 

@@ -1,13 +1,13 @@
 .dropListInput {
-    font-size: 17px;
+  font-size: 17px;
 }
 
 .dropListInput__code {
-    margin-right: 5px;
+  margin-right: 5px;
 }
 
 .dropListInput__inputNumber {
-    outline: none;
-    border: none;
-    font-size: inherit;
+  outline: none;
+  border: none;
+  font-size: inherit;
 }

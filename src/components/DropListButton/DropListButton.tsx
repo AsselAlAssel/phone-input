@@ -1,18 +1,26 @@
-import React from 'react';
-import "./DropListButton.css"
-import {MdArrowDropDown} from "react-icons/md";
-import { Props } from '../DropListButton/constant';
+import React from "react";
+import "./DropListButton.css";
+import { MdArrowDropDown } from "react-icons/md";
+import { Props } from "../DropListButton/constant";
 
-
-const DropListButton:React.FC<Props> = ({flag,setShowDropList,name}) => {
+const DropListButton: React.VFC<Props> = ({
+  showDropList,
+  flag,
+  setShowDropList,
+  name,
+}) => {
+  const buttonClickedHandler = (event: any) => {
+    event.stopPropagation();
+    setShowDropList((showDropList) => !showDropList);
+  };
   return (
-    <button onClick={()=>setShowDropList(true)}
-    className="dropListButton">
-    <img src={flag} alt={`flag for ${name} `} />
-    <span><MdArrowDropDown/></span>
+    <button onClick={buttonClickedHandler} className="dropListButton">
+      <img src={flag} alt={`flag for ${name} `} />
+      <span>
+        <MdArrowDropDown />
+      </span>
+    </button>
+  );
+};
 
-</button>
-  )
-}
-
-export default DropListButton
+export default DropListButton;

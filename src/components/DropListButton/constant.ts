@@ -1,8 +1,6 @@
-export type Props={
-    flag:string,
-    setShowDropList:React.Dispatch<React.SetStateAction<boolean>>,
-    name:string
-  
-  
-  }
-  
+export type Props = {
+  flag: string;
+  showDropList: boolean;
+  setShowDropList: React.Dispatch<React.SetStateAction<boolean>>;
+  name: string;
+};

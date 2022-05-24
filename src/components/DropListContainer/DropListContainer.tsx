@@ -3,15 +3,12 @@ import DropList from '../DropList/DropList';
 import DropListButton from '../DropListButton/DropListButton';
 import "./DropListContainer.css";
 import DropListInput from '../DropListInput/DropListInput';
-import useFetchData from '../CustomHook/usefetch';
 import { dropListValueType } from '../assets/Constant';
-import { URL } from './constant';
+import { Props } from './constant';
 
 
 
-const DropListFrom: React.VFC = () => {
-  const { data: countriesCode, loading, hasError } = useFetchData<dropListValueType>(URL);
-  const [dropListValue, setDropListValue] = useState<dropListValueType>();
+const DropListFrom: React.VFC<Props<dropListValueType>> = (props) => {
   const [showDropList, setShowDropList] = useState<boolean>(false);
 
   React.useEffect(() => {
@@ -25,32 +22,25 @@ const DropListFrom: React.VFC = () => {
     }
   }, [])
 
-
-  if (loading) {
-    return <h2 className="container__status">LOADING...</h2>
-  } else if (hasError) {
-    return <h2 className="container__status error">There an error...</h2>
-  }
-
   return (
     <div className='dropListContainer' onSubmit={event => event.preventDefault()}>
       <div className='dropListContainer__ButtonAndInput'>
         <DropListButton
-          flag={dropListValue ? dropListValue.flag : countriesCode[0].flag}
-          name={dropListValue ? dropListValue.name : countriesCode[0].name}
+          flag={props.selectedCountry ? props.selectedCountry.flag : props.countriesCode[0].flag}
+          name={props.selectedCountry ? props.selectedCountry.name : props.countriesCode[0].name}
           showDropList={showDropList}
           setShowDropList={setShowDropList}
 
         />
         <DropListInput
-          code={dropListValue ? dropListValue.dialCode : countriesCode[0].dialCode}
+          code={props.selectedCountry ? props.selectedCountry.dialCode : props.countriesCode[0].dialCode}
         />
       </div>
       {showDropList && < DropList
-        countriesData={countriesCode}
-        setDropListValue={setDropListValue}
+        countriesData={props.countriesCode}
+        onChangeSelectedValue={props.onChangeSelectedValue}
         setShowDropList={setShowDropList}
-        indexDropListClicked={dropListValue ? countriesCode.indexOf(dropListValue) : 0}
+        indexDropListClicked={props.selectedCountry ? props.countriesCode.indexOf(props.selectedCountry) : 0}
       />
       }
     </div>

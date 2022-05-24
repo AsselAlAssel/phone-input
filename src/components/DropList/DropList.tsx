@@ -2,17 +2,18 @@ import React, { useState } from "react";
 import "./DropList.css";
 import { Props } from "./constant";
 import { AiOutlineCheck } from "react-icons/ai";
+import { dropListValueType } from "../assets/Constant";
 
-const DropList: React.VFC<Props> = ({
+const DropList: React.VFC<Props<dropListValueType>> = ({
   countriesData,
-  setDropListValue,
+  onChangeSelectedValue,
   setShowDropList,
   indexDropListClicked,
 }) => {
   const handelDropListItemClick = (event: any) => {
     const dropListElementClicked = event.target.closest(".dropList__element");
     const index = dropListElementClicked.getAttribute("data-index");
-    setDropListValue(countriesData[index]);
+    onChangeSelectedValue(countriesData[index]);
     setShowDropList(false);
   };
 

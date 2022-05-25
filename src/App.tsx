@@ -9,7 +9,7 @@ const App: React.VFC = () => {
   const { data: countriesCode, loading, hasError } = useFetchData<dropListValueType>(URL);
   const [selectedCountry, setSelectedCountry] = useState<dropListValueType>();
 
-  const changeSelectedValue=(newCountrySelected:dropListValueType)=>{
+  const changeSelectedValue = (newCountrySelected: dropListValueType) => {
     setSelectedCountry(newCountrySelected);
   }
 
@@ -20,9 +20,9 @@ const App: React.VFC = () => {
   }
 
   return <DropListContainer
-  countriesCode={countriesCode}
-  selectedCountry={selectedCountry}
-  onChangeSelectedValue={changeSelectedValue}
-   />;
+    countriesCode={countriesCode}
+    selectedCountry={selectedCountry}
+    onChangeSelectedValue={changeSelectedValue}
+  />;
 };
 export default App;

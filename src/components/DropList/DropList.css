@@ -1,12 +1,15 @@
 .dropList {
   height: 300px;
+  width: 500px;
   overflow-y: scroll;
   border: 1px solid rgb(202, 202, 202);
   margin-top: 5px;
   border-radius: 10px;
-  padding: 10px;
   box-sizing: border-box;
+  overflow: hidden;
 }
+
+
 
 /* ===== Scrollbar CSS  ===== */
 
@@ -19,47 +22,35 @@
 
 /* Chrome, Edge, and Safari */
 
-.dropList::-webkit-scrollbar {
+.ReactVirtualized__List::-webkit-scrollbar {
   width: 5px;
 }
 
-.dropList::-webkit-scrollbar-track {
+.ReactVirtualized__List::-webkit-scrollbar-track {
   background: transparent;
   border-radius: 10px;
   overflow: hidden;
+ 
 }
 
-.dropList::-webkit-scrollbar-thumb {
+.ReactVirtualized__List::-webkit-scrollbar-thumb {
   background-color: #e0e0e0;
   border-radius: 10px;
   height: 50px;
+  
 }
 
 .dropList__element {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 5px;
-  padding: 5px;
+  /* margin: 5px; */
+  padding: 10px;
+  box-sizing: border-box;
   cursor: pointer;
   border-radius: 5px;
 }
 
 .dropList .dropList__element:hover {
   background-color: #f1f4f8;
-}
-.dropList__elementContent {
-  display: flex;
-  align-items: center;
-}
-
-.dropList__elementContent img {
-  width: 30px;
-  height: 30px;
-}
-
-.dropList__elementContent img,
-.dropList__elementContent span {
-  margin-right: 10px;
-  pointer-events: none;
 }

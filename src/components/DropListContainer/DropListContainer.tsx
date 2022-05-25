@@ -11,16 +11,16 @@ import { Props } from './constant';
 const DropListFrom: React.VFC<Props<dropListValueType>> = (props) => {
   const [showDropList, setShowDropList] = useState<boolean>(false);
 
-  React.useEffect(() => {
-    function handleClick() {
-      setShowDropList(false);
-    }
+  // React.useEffect(() => {
+  //   function handleClick() {
+  //     setShowDropList(false);
+  //   }
 
-    document.querySelector("body")?.addEventListener("click", handleClick)
-    return () => {
-      document.querySelector("body")?.removeEventListener("click", handleClick)
-    }
-  }, [])
+  //   document.querySelector("body")?.addEventListener("click", handleClick)
+  //   return () => {
+  //     document.querySelector("body")?.removeEventListener("click", handleClick)
+  //   }
+  // }, [])
 
   return (
     <div className='dropListContainer' onSubmit={event => event.preventDefault()}>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { dropListValueType } from "../assets/Constant";
+
 
 const useFetchData = <T>(URl: string) => {
   const [data, setData] = useState<T[]>([]);

@@ -3,12 +3,12 @@ import DropList from '../DropList/DropList';
 import DropListButton from '../DropListButton/DropListButton';
 import "./DropListContainer.css";
 import DropListInput from '../DropListInput/DropListInput';
-import { dropListValueType } from '../assets/Constant';
-import { Props } from './constant';
+import { dropListValueType } from '../types/types';
+import { DropListContainerProps } from './types'; 
 
 
 
-const DropListFrom: React.VFC<Props<dropListValueType>> = (props) => {
+const DropListFrom: React.VFC<DropListContainerProps<dropListValueType>> = (props) => {
   const [showDropList, setShowDropList] = useState<boolean>(false);
 
   // React.useEffect(() => {

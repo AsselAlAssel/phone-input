@@ -1,4 +1,4 @@
-export type Props<T>={
+export type DropListItemProps<T>={
     countryData:{
         name:string,
         flag:string,

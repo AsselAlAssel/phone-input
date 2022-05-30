@@ -1,9 +1,9 @@
 import React from "react";
 import "./DropListButton.css";
 import { MdArrowDropDown } from "react-icons/md";
-import { Props } from "../DropListButton/constant";
+import { DropListButtonProps } from "./types";
 
-const DropListButton: React.VFC<Props> = ({
+const DropListButton: React.VFC<DropListButtonProps> = ({
   showDropList,
   flag,
   setShowDropList,

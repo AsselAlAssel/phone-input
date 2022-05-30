@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { dropListValueType } from "./components/assets/Constant";
+import { dropListValueType } from "./components/types/types";
 import useFetchData from "./components/CustomHook/usefetch";
-import { URL } from "./components/assets/Constant";
+import { URL } from "./components/constant/Constant";
 import DropListContainer from "./components/DropListContainer/DropListContainer";
 
 const App: React.VFC = () => {

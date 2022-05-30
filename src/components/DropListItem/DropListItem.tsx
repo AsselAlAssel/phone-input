@@ -1,11 +1,11 @@
-import { Props } from "./constant";
+import { DropListItemProps } from "./types";
 import {Fragment} from 'react'
-import { dropListValueType } from "../../assets/Constant";
+import { dropListValueType } from "../types/types";
 import { AiOutlineCheck } from "react-icons/ai";
 import "./DropListItem.css"
 
 
-const DropListItem=(props:Props<dropListValueType>)=>{
+const DropListItem=(props:DropListItemProps<dropListValueType>)=>{
 
   
     return(

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./DropListInput.css";
-import { Props } from "./constant";
+import { DropListInputProps } from "./types";
 
-const DropListInput: React.VFC<Props> = ({ code }) => {
+const DropListInput: React.VFC<DropListInputProps> = ({ code }) => {
   const [inputValue, setInputValue] = useState<string>("");
 
   return (

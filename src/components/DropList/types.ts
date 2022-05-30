@@ -1,5 +1,5 @@
 
-export type Props<T> = {
+export type DropListProps<T> = {
   countriesData: T[];
   onChangeSelectedValue: (newSelectedCountry: T) => void
   setShowDropList: React.Dispatch<React.SetStateAction<boolean>>;

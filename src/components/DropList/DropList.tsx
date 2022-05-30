@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import "./DropList.css";
-import { AutoSizerFunPar, ListRowRenderer, Props } from "./constant";
-import { dropListValueType } from "../assets/Constant";
+import {AutoSizerFunPar,ListRowRenderer,DropListProps} from './types'
+
+import { dropListValueType } from "../types/types";
 import { List, AutoSizer } from "react-virtualized"
-import DropListItem from "./DropListItem/DropListItem";
+import DropListItem from "../DropListItem/DropListItem";
 import ClickAwayListener from "react-click-away-listener"
 
 
-const DropList: React.VFC<Props<dropListValueType>> = ({
+const DropList: React.VFC<DropListProps<dropListValueType>> = ({
   countriesData,
   onChangeSelectedValue,
   setShowDropList,

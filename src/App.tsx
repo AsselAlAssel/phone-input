@@ -7,22 +7,18 @@ import DropListContainer from "./components/DropListContainer/DropListContainer"
 const App: React.VFC = () => {
 
   const { data: countriesCode, loading, hasError } = useFetchData<dropListValueType>(URL);
+  console.log(countriesCode, loading,hasError);
   const [selectedCountry, setSelectedCountry] = useState<dropListValueType>();
 
-  const changeSelectedValue = (newCountrySelected: dropListValueType) => {
+  const handelSelectedValueChange = (newCountrySelected: dropListValueType) => {
     setSelectedCountry(newCountrySelected);
   }
-
-  if (loading) {
-    return <h2 className="container__status">LOADING...</h2>
-  } else if (hasError) {
-    return <h2 className="container__status error">There an error...</h2>
-  }
-
   return <DropListContainer
     countriesCode={countriesCode}
     selectedCountry={selectedCountry}
-    onChangeSelectedValue={changeSelectedValue}
+    onChangeSelectedValue={handelSelectedValueChange}
+    loading={loading}
+    hasError={hasError}
   />;
 };
 export default App;

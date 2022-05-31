@@ -8,20 +8,20 @@ const useFetchData = <T>(URl: string) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch(URl);
-      if (!res.ok) {
-        throw new Error("there an error because i do'nt know");
-      }
-      const json = await res.json();
-      setData(json);
-      setLoading(false);
-    };
+      try {
+        const res = await fetch(URl);
+        const json = await res.json();
+        setData(json);
+        setLoading(false);
+      } catch (error) {
+        setData([]);
+        setHasError(true);
+        setLoading(false);
 
-    fetchData().catch((err) => {
-      setData([]);
-      setLoading(false);
-      setHasError(true);
-    });
+      }
+
+    };
+    fetchData();
   }, [URl]);
 
   return { data, loading, hasError };

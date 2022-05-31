@@ -3,23 +3,20 @@ import "./DropListButton.css";
 import { MdArrowDropDown } from "react-icons/md";
 import { DropListButtonProps } from "./types";
 
-const DropListButton: React.VFC<DropListButtonProps> = ({
-  showDropList,
-  flag,
-  setShowDropList,
-  name,
-}) => {
-  const buttonClickedHandler = (event: any) => {
-    event.stopPropagation();
-    setShowDropList((showDropList) => !showDropList);
+const DropListButton: React.VFC<DropListButtonProps> = (props) => {
+  const buttonClickedHandler = () => {
+    props.setShowDropList(!props.showDropList);
   };
+  const classNameDropListButton=((props.loading||props.hasError)&&"invalid");
   return (
-    <button onClick={buttonClickedHandler} className="dropListButton">
-      <img src={flag} alt={`flag for ${name} `} />
+    <div className={`dropListButton ${classNameDropListButton}`}>
+    <button onClick={buttonClickedHandler} className="dropListButton__button">
+      <img src={props.flag} alt={`flag for ${props.name} `} />
       <span>
         <MdArrowDropDown />
       </span>
     </button>
+    </div>
   );
 };
 

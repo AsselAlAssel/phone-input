@@ -4,47 +4,61 @@ import DropListButton from '../DropListButton/DropListButton';
 import "./DropListContainer.css";
 import DropListInput from '../DropListInput/DropListInput';
 import { dropListValueType } from '../types/types';
-import { DropListContainerProps } from './types'; 
+import { DropListContainerProps } from './types';
+import loadingFlag from "../../assets/images/loadingFlag.png";
+import errorFlag from "../../assets/images/errorFlag.png";
 
 
+const DropListContainer: React.VFC<DropListContainerProps<dropListValueType>> = (props) => {
+  const [showDropList, setShowDropList] = useState(false);
 
-const DropListFrom: React.VFC<DropListContainerProps<dropListValueType>> = (props) => {
-  const [showDropList, setShowDropList] = useState<boolean>(false);
+  let [flagCountry,nameCountry,codeCountry]=["","",""];
 
-  // React.useEffect(() => {
-  //   function handleClick() {
-  //     setShowDropList(false);
-  //   }
+  if (props.loading) {
+    flagCountry=loadingFlag;
+    nameCountry = "loading image";
+    codeCountry = "xxx";
 
-  //   document.querySelector("body")?.addEventListener("click", handleClick)
-  //   return () => {
-  //     document.querySelector("body")?.removeEventListener("click", handleClick)
-  //   }
-  // }, [])
+  } else if (props.hasError) {
+    flagCountry=errorFlag;
+    nameCountry = "error image";
+    codeCountry = "xxx";
+  } else {
+    flagCountry = props.selectedCountry?.flag ?? props.countriesCode[0].flag;
+    nameCountry = props.selectedCountry?.name ?? props.countriesCode[0].name;
+    codeCountry=props.selectedCountry?.dialCode ?? props.countriesCode[0].dialCode;
+  }
+
+
 
   return (
-    <div className='dropListContainer' onSubmit={event => event.preventDefault()}>
+    <div className='dropListContainer'>
       <div className='dropListContainer__ButtonAndInput'>
         <DropListButton
-          flag={props.selectedCountry ? props.selectedCountry.flag : props.countriesCode[0].flag}
-          name={props.selectedCountry ? props.selectedCountry.name : props.countriesCode[0].name}
+          flag={flagCountry}
+          name={nameCountry}
           showDropList={showDropList}
           setShowDropList={setShowDropList}
+          loading={props.loading}
+          hasError={props.hasError}
 
         />
         <DropListInput
-          code={props.selectedCountry ? props.selectedCountry.dialCode : props.countriesCode[0].dialCode}
+          code={codeCountry}
+          loading={props.loading}
+          hasError={props.hasError}
         />
       </div>
       {showDropList && < DropList
         countriesData={props.countriesCode}
         onChangeSelectedValue={props.onChangeSelectedValue}
         setShowDropList={setShowDropList}
-        indexDropListClicked={props.selectedCountry ? props.countriesCode.indexOf(props.selectedCountry) : 0}
-      />
+        selectedCountry={props.selectedCountry}
+        loading={props.loading}
+        hasError={props.hasError} />
       }
     </div>
   )
 }
 
-export default DropListFrom
+export default DropListContainer

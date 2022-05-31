@@ -15,7 +15,7 @@ const DropListItem=(props:DropListItemProps<dropListValueType>)=>{
                <span> {props.countryData.name}</span>
               <span> {props.countryData.dialCode}</span>
             </div>
-             {props.index === props.indexDropListClicked && (
+             {props.selectedCountry?.dialCode === props.countryData.dialCode && (
               <div className="dropList__elementChecked">
                 <AiOutlineCheck />
               </div>

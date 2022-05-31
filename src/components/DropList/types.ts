@@ -3,7 +3,9 @@ export type DropListProps<T> = {
   countriesData: T[];
   onChangeSelectedValue: (newSelectedCountry: T) => void
   setShowDropList: React.Dispatch<React.SetStateAction<boolean>>;
-  indexDropListClicked: number;
+  selectedCountry:T|undefined,
+  loading:boolean,
+  hasError:boolean
 };
 
 export type AutoSizerFunPar={

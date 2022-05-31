@@ -1,6 +1,9 @@
 .dropListInput {
   font-size: 17px;
 }
+.dropListInput.invalid{
+  pointer-events: none;
+}
 
 .dropListInput__code {
   margin-right: 5px;
@@ -10,4 +13,10 @@
   outline: none;
   border: none;
   font-size: inherit;
+}
+
+.dropListInput_hasError{
+  display: block;
+  font-size: 13px;
+  color: red;
 }

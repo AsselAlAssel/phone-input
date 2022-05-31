@@ -1,4 +1,4 @@
-.dropListButton {
+.dropListButton__button {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -8,6 +8,7 @@
   margin-right: 15px;
   cursor: pointer;
   background-color: rgb(216, 216, 216);
+
 }
 
 .dropListButton img {
@@ -17,4 +18,8 @@
 
 .dropListButton span {
   font-size: 30px;
+}
+
+.dropListButton.invalid{
+  pointer-events: none;
 }

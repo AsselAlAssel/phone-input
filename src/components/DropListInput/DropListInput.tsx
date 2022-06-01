@@ -4,23 +4,28 @@ import { DropListInputProps } from "./types";
 
 const DropListInput: React.VFC<DropListInputProps> = (props) => {
   const [inputValue, setInputValue] = useState("");
-  const InputPlaceholder=props.loading?"Loading" :"xxx-xxx-xxx";
-  const classNameDropListInput=((props.loading||props.hasError)&&"invalid");
+ 
+  const handelPhoneInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const enteredValue = event.target.value.replaceAll("-","");
+
+    console.log(enteredValue);
+    if (!isNaN(+enteredValue)) {
+      setInputValue(enteredValue);
+    }
+
+  }
 
   return (
-    <div className={`dropListInput ${classNameDropListInput}`}>
+    <div className={"dropListInput"}>
       <span className="dropListInput__code">({props.code})</span>
       <input
-      
         type="text"
-        value={inputValue.replace(/(\d{3})(\d{3})/, "$1-$2")}
-        placeholder={InputPlaceholder}
+        value={inputValue.replace(/(\d{3})(\d{3})(\d{3})/, '$1-$2-$3')}
+        placeholder="xxx-xxx-xxx"
         maxLength={11}
         className="dropListInput__inputNumber"
-        onChange={(e) => setInputValue(e.target.value)}
+        onChange={handelPhoneInputChange}
       />
-     
-      {props.hasError && <span className="dropListInput_hasError">error loading countries</span>}
     </div>
   );
 };

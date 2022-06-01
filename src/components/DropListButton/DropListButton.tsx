@@ -7,9 +7,8 @@ const DropListButton: React.VFC<DropListButtonProps> = (props) => {
   const buttonClickedHandler = () => {
     props.setShowDropList(!props.showDropList);
   };
-  const classNameDropListButton=((props.loading||props.hasError)&&"invalid");
   return (
-    <div className={`dropListButton ${classNameDropListButton}`}>
+    <div className={"dropListButton"}>
     <button onClick={buttonClickedHandler} className="dropListButton__button">
       <img src={props.flag} alt={`flag for ${props.name} `} />
       <span>

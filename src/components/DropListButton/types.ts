@@ -3,7 +3,6 @@ export type DropListButtonProps = {
   showDropList: boolean,
   name: string,
   setShowDropList: React.Dispatch<React.SetStateAction<boolean>>,
-  loading:boolean,
-  hasError:boolean
+  loading:boolean
   
 };

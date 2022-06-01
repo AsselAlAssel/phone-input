@@ -8,7 +8,12 @@
   justify-content: flex-start;
   align-items: center;
   font-size: 18px;
-  border-radius: 10px;
+  border-radius: 5px;
   overflow: hidden;
-  border: 1px solid red;
+  border: 1px solid #ccc;
+}
+
+.error-text {
+  margin: 5px;
+  color: red;
 }

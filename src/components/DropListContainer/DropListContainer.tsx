@@ -6,8 +6,6 @@ import DropListInput from '../DropListInput/DropListInput';
 import { dropListValueType } from '../types/types';
 import { DropListContainerProps } from './types';
 import loadingFlag from "../../assets/images/loadingFlag.png";
-import errorFlag from "../../assets/images/errorFlag.png";
-
 
 const DropListContainer: React.VFC<DropListContainerProps<dropListValueType>> = (props) => {
   const [showDropList, setShowDropList] = useState(false);
@@ -19,11 +17,7 @@ const DropListContainer: React.VFC<DropListContainerProps<dropListValueType>> = 
     nameCountry = "loading image";
     codeCountry = "xxx";
 
-  } else if (props.hasError) {
-    flagCountry=errorFlag;
-    nameCountry = "error image";
-    codeCountry = "xxx";
-  } else {
+  }else {
     flagCountry = props.selectedCountry?.flag ?? props.countriesCode[0].flag;
     nameCountry = props.selectedCountry?.name ?? props.countriesCode[0].name;
     codeCountry=props.selectedCountry?.dialCode ?? props.countriesCode[0].dialCode;
@@ -32,16 +26,14 @@ const DropListContainer: React.VFC<DropListContainerProps<dropListValueType>> = 
 
 
   return (
-    <div className='dropListContainer'>
-      <div className='dropListContainer__ButtonAndInput'>
+    <div className={props.classes?.dropListContainer??"dropListContainer"}>
+      <div className={props.classes?.divForInputAndButton??"dropListContainer__ButtonAndInput"}>
         <DropListButton
           flag={flagCountry}
           name={nameCountry}
           showDropList={showDropList}
           setShowDropList={setShowDropList}
           loading={props.loading}
-          hasError={props.hasError}
-
         />
         <DropListInput
           code={codeCountry}
@@ -57,6 +49,7 @@ const DropListContainer: React.VFC<DropListContainerProps<dropListValueType>> = 
         loading={props.loading}
         hasError={props.hasError} />
       }
+     {props.hasError && <p className='error-text'>{props.helperText}</p>}
     </div>
   )
 }

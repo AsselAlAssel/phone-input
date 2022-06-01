@@ -19,7 +19,3 @@
 .dropListButton span {
   font-size: 30px;
 }
-
-.dropListButton.invalid{
-  pointer-events: none;
-}

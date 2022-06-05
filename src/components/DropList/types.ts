@@ -4,7 +4,6 @@ export type DropListProps<T> = {
   onChangeSelectedValue: (newSelectedCountry: T) => void
   setShowDropList: React.Dispatch<React.SetStateAction<boolean>>;
   selectedCountry:T|undefined,
-  loading:boolean,
   hasError:boolean
 };
 

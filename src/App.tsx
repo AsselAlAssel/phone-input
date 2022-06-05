@@ -5,8 +5,8 @@ import DropListContainer from "./components/DropListContainer/DropListContainer"
 
 const App: React.VFC = () => {
   const [selectedCountry, setSelectedCountry] = useState<dropListValueType>();
-  const [hasError,setHasError]=useState(false);
-  const [helperText,setHelperText]=useState("input invalid");
+  const [hasError, setHasError] = useState(false);
+  const [helperText, setHelperText] = useState("input invalid");
 
   const handelSelectedValueChange = (newCountrySelected: dropListValueType) => {
     setSelectedCountry(newCountrySelected);
@@ -15,14 +15,11 @@ const App: React.VFC = () => {
     countriesCode={countriesData}
     selectedCountry={selectedCountry}
     onChangeSelectedValue={handelSelectedValueChange}
-    loading={false}
     hasError={hasError}
     helperText={"invalid input"}
     classes={{
-      dropListContainer:"dropListContainer",
-      divForInputAndButton:"dropListContainer__ButtonAndInput",
-
     }}
+
   />;
 };
 export default App;

@@ -19,3 +19,8 @@
   cursor: pointer;
   border-radius: 5px;
 }
+
+.dropListCountries__ItemContainer:hover {
+  background-color: rgba(226, 226, 226, 0.151);
+}
+

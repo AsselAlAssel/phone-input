@@ -2,7 +2,7 @@
 export type DropListProps<T> = {
   countriesData: T[];
   onChangeSelectedValue: (newSelectedCountry: T) => void
-  setShowDropList: React.Dispatch<React.SetStateAction<boolean>>;
+  onChangeShowDropListValue:  (value: boolean) => void;
   selectedCountry:T|undefined,
   hasError:boolean
 };

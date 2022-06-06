@@ -1,6 +1,8 @@
 .dropListContainer {
-  width: 500px;
+  min-width: 340px;
+  max-width: 450px;
   margin: 40px auto;
+  position: relative;
 }
 
 .dropListContainer__ButtonAndInput {
@@ -13,7 +15,7 @@
   border: 1px solid #ccc;
 }
 
-.error-text {
+.ErrorText {
   margin: 5px;
   color: red;
 }

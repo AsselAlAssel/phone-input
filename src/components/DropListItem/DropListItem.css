@@ -1,15 +1,16 @@
-.dropList__elementContent {
+.dropListCountries__ItemContent {
     display: flex;
     align-items: center;
+    cursor: pointer;
   }
   
-  .dropList__elementContent img {
+  .dropListCountries__ItemContent  img {
     width: 30px;
     height: 30px;
   }
   
-  .dropList__elementContent img,
-  .dropList__elementContent span {
+  .dropListCountries__ItemContent img,
+  .dropListCountries__ItemContent  span {
     margin-right: 10px;
     pointer-events: none;
   }

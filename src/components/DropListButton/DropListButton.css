@@ -1,21 +1,24 @@
-.dropListButton__button {
+.dropListButtonContainer {
+  background-color: rgb(216, 216, 216);
+}
+
+button#ButtonForShowDropList {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 90px;
   border: none;
   padding: 5px 10px;
-  margin-right: 15px;
   cursor: pointer;
-  background-color: rgb(216, 216, 216);
+  background-color: transparent;
 
 }
 
-.dropListButton img {
+#ButtonForShowDropList img {
   height: 30px;
   width: 30px;
 }
 
-.dropListButton span {
+#ButtonForShowDropList span {
   font-size: 30px;
+  margin-left: 10px;
 }

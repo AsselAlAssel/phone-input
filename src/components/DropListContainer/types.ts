@@ -1,6 +1,4 @@
-
-type OverridableClasses = "dropListContainer" | "divForInputAndButton"
-
+import { OverridableClasses } from "../types/types"
 export type DropListContainerProps<T> = {
   countriesCode: T[],
   selectedCountry: T | undefined,

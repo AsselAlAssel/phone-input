@@ -1,28 +1,31 @@
-import React, { useState } from "react";
 import "./DropList.css";
-import {AutoSizerFunPar,ListRowRenderer,DropListProps} from './types'
+import { AutoSizerFunPar, ListRowRenderer, DropListProps } from './types'
 import { dropListValueType } from "../types/types";
 import { List, AutoSizer } from "react-virtualized"
 import DropListItem from "../DropListItem/DropListItem";
 import ClickAwayListener from "react-click-away-listener"
+import { Classes } from "../Context/ClassesContext";
+import { useContext } from "react";
+
 
 
 const DropList: React.VFC<DropListProps<dropListValueType>> = (props) => {
+  const ClassesContext = useContext(Classes);
 
   const handelDropListItemClick = (event: any) => {
-    const dropListElementClicked = event.target.closest(".dropList__element");
+    const dropListElementClicked = event.target.closest("#dropList__element");
     const index = dropListElementClicked.getAttribute("data-index");
-   props.onChangeSelectedValue(props.countriesData[index]);
-    props.setShowDropList(false);
+    props.onChangeSelectedValue(props.countriesData[index]);
+    props.onChangeShowDropListValue(false);
 
   };
 
-  const handleClickAwayListener=()=>{
-    props.setShowDropList(false);
+  const handleClickAwayListener = () => {
+    props.onChangeShowDropListValue(false);
   }
   return (
     <ClickAwayListener onClickAway={handleClickAwayListener}>
-      <div className="dropList" >
+      <div className={ClassesContext?.dropListContainer ?? "dropListCountries"} >
         <AutoSizer>
           {({ width, height }: AutoSizerFunPar) => (
             <List
@@ -34,7 +37,9 @@ const DropList: React.VFC<DropListProps<dropListValueType>> = (props) => {
                 const countryData = props.countriesData[index];
 
                 return <div
-                  className="dropList__element"
+                  className={ClassesContext?.dropListCountries__ItemContainer
+                    ?? "dropListCountries__ItemContainer"}
+                  id="dropList__element"
                   key={key} style={style}
                   data-index={index}
                   onClick={handelDropListItemClick}>
@@ -42,9 +47,8 @@ const DropList: React.VFC<DropListProps<dropListValueType>> = (props) => {
                   <DropListItem
                     countryData={countryData}
                     onChangeSelectedValue={props.onChangeSelectedValue}
-                    setShowDropList={props.setShowDropList}
-                    selectedCountry={props.selectedCountry?props.selectedCountry:props.countriesData[0]}
-                   
+                    selectedCountry={props.selectedCountry ? props.selectedCountry : props.countriesData[0]}
+
 
                   /></div>
               }}

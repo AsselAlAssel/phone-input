@@ -16,8 +16,9 @@ const App: React.VFC = () => {
     selectedCountry={selectedCountry}
     onChangeSelectedValue={handelSelectedValueChange}
     hasError={hasError}
-    helperText={"invalid input"}
+    helperText={helperText}
     classes={{
+      dropListCountries:"ss"
     }}
 
   />;

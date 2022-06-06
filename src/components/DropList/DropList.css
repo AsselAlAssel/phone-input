@@ -1,7 +1,6 @@
-.dropList {
-  height: 300px;
-  width: 500px;
-  overflow-y: scroll;
+.dropListCountries {
+  height: 280px;
+  width: 100%;
   border: 1px solid rgb(202, 202, 202);
   margin-top: 5px;
   border-radius: 5px;
@@ -11,17 +10,12 @@
   background-color: #fff;
 }
 
-.dropList__element {
+.dropListCountries__ItemContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* margin: 5px; */
   padding: 10px;
   box-sizing: border-box;
   cursor: pointer;
   border-radius: 5px;
-}
-
-.dropList .dropList__element:hover {
-  background-color: #f1f4f8;
 }

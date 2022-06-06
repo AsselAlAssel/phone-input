@@ -1,15 +1,21 @@
-import React from "react";
+import React,{useContext} from "react";
 import "./DropListButton.css";
 import { MdArrowDropDown } from "react-icons/md";
 import { DropListButtonProps } from "./types";
+import { Classes } from "../Context/ClassesContext";
 
 const DropListButton: React.VFC<DropListButtonProps> = (props) => {
+  
+const ClassesContext=useContext(Classes);
+
+
+
   const buttonClickedHandler = () => {
-    props.setShowDropList(!props.showDropList);
+    props.onChangeShowDropListValue(!props.showDropList);
   };
   return (
-    <div className={"dropListButton"}>
-    <button onClick={buttonClickedHandler} className="dropListButton__button">
+    <div className={ClassesContext?.dropListButtonContainer??"dropListButtonContainer"}>
+    <button onClick={buttonClickedHandler} id="ButtonForShowDropList">
       <img src={props.flag} alt={`flag for ${props.name} `} />
       <span>
         <MdArrowDropDown />

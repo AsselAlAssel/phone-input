@@ -1,19 +1,20 @@
-.dropListInput {
+.dropListInputContainer{
   font-size: 17px;
 }
 
-.dropListInput__code {
+.dropListInputContainer__code {
   margin-right: 5px;
+  display: inline-block;
+   text-align: center;
+   font-size: 14px;
+   margin-left: 10px;
+  
+
 }
 
-.dropListInput__inputNumber {
+.dropListInputContainer__inputNumber {
   outline: none;
   border: none;
   font-size: inherit;
-}
-
-.dropListInput_hasError{
-  display: block;
-  font-size: 13px;
-  color: red;
+ 
 }

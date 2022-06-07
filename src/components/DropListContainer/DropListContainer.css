@@ -1,0 +1,21 @@
+.dropListContainer {
+  min-width: 340px;
+  max-width: 450px;
+  margin: 40px auto;
+  position: relative;
+}
+
+.dropListContainer__ButtonAndInput {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 18px;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+}
+
+.ErrorText {
+  margin: 5px;
+  color: red;
+}

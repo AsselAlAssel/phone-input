@@ -1,0 +1,17 @@
+.dropListCountries__ItemContent {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .dropListCountries__ItemContent  img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .dropListCountries__ItemContent img,
+  .dropListCountries__ItemContent  span {
+    margin-right: 10px;
+    pointer-events: none;
+  }
+  

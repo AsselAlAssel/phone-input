@@ -1,0 +1,26 @@
+.dropListCountries {
+  height: 280px;
+  width: 100%;
+  border: 1px solid rgb(202, 202, 202);
+  margin-top: 5px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: absolute;
+  background-color: #fff;
+}
+
+.dropListCountries__ItemContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.dropListCountries__ItemContainer:hover {
+  background-color: rgba(226, 226, 226, 0.151);
+}
+

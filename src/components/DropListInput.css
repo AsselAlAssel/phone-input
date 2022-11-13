@@ -1,0 +1,10 @@
+.dropListForm__dropListInput span {
+    margin-right: 3px;
+    font-size: 17px;
+}
+
+.dropListForm__dropListInput input {
+    font-size: 17px;
+    outline: none;
+    border: none;
+}

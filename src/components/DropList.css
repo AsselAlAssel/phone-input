@@ -1,0 +1,64 @@
+.dropListForm__DropList {
+    height: 300px;
+    overflow-y: scroll;
+    border: 1px solid black;
+    margin-top: 5px;
+    border-radius: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+
+/* ===== Scrollbar CSS ===== */
+
+
+/* Firefox */
+
+.dropListForm__DropList {
+    scrollbar-width: auto;
+    scrollbar-color: #e0e0e0 rgb(49, 48, 48);
+}
+
+
+/* Chrome, Edge, and Safari */
+
+.dropListForm__DropList::-webkit-scrollbar {
+    width: 5px;
+}
+
+.dropListForm__DropList::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.dropListForm__DropList::-webkit-scrollbar-thumb {
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    height: 50px;
+}
+
+.dropListForm__DropList p {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 5px;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.dropListForm__DropList p:hover {
+    background-color: #f1f4f8;
+}
+
+.dropListForm__DropList img {
+    width: 30px;
+    height: 30px;
+}
+
+.dropListForm__DropList p img,
+.dropListForm__DropList p span {
+    margin-right: 10px;
+    pointer-events: none;
+}

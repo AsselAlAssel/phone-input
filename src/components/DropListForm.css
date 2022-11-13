@@ -1,0 +1,29 @@
+.container__status {
+    text-align: center;
+    width: 400px;
+    margin: auto;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: blueviolet;
+    color: #fff;
+}
+
+.container__status.error {
+    background-color: red;
+}
+
+.container__dropListForm {
+    width: 400px;
+    margin: auto;
+}
+
+.dropListForm__buttonAndInput {
+    border: 1px solid #053f7a;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 28px 0px rgba(54, 104, 151, 0.1);
+    -webkit-box-shadow: 0px 0px 28px 0px rgba(54, 104, 151, 0.1);
+    -moz-box-shadow: 0px 0px 28px 0px rgba(54, 104, 151, 0.1);
+    display: flex;
+    align-items: center;
+}
